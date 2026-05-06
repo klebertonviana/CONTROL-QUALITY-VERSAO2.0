@@ -1893,3 +1893,21 @@ button,
   line-height: 1.6;
   padding: 12px;
 }
+
+/* ================= FOTO PERFIL ================= */
+
+.profile-avatar {
+  width: 172px;
+  height: 172px;
+  flex: 0 0 172px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f4e7ea;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

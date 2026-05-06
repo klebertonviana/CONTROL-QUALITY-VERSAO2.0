@@ -218,6 +218,7 @@ const profileCargo = document.getElementById("profileCargo");
 const profileAgencia = document.getElementById("profileAgencia");
 const profileRegional = document.getElementById("profileRegional");
 const profileGestor = document.getElementById("profileGestor");
+const profilePhoto = document.getElementById("profilePhoto");
 
 let usuarioLogado = null;
 
@@ -235,19 +236,23 @@ loginForm.addEventListener("submit", (e) => {
 
   usuarioLogado = user;
 
-  topUserText.textContent = `${user.matricula} - ${user.nome}`;
+topUserText.textContent = `${user.matricula} - ${user.nome}`;
 
-  profileName.textContent = user.nome;
-  profileMatricula.textContent = user.matricula;
-  profileCargo.textContent = user.cargo;
-  profileAgencia.textContent = user.agencia || "-";
-  profileRegional.textContent = user.regional;
-  profileGestor.textContent = user.gestor;
+profileName.textContent = user.nome;
+profileMatricula.textContent = user.matricula;
+profileCargo.textContent = user.cargo;
+profileAgencia.textContent = user.agencia || "-";
+profileRegional.textContent = user.regional;
+profileGestor.textContent = user.gestor;
 
-  lastAccessText.textContent = new Date().toLocaleString("pt-BR");
+if (user.matricula === "7098") {
+  profilePhoto.src = "fotos/7098.jpg";
+}
 
-  loginScreen.classList.add("hidden");
-  appScreen.classList.remove("hidden");
+lastAccessText.textContent = new Date().toLocaleString("pt-BR");
+
+loginScreen.classList.add("hidden");
+appScreen.classList.remove("hidden");
 });
 
 // ================= LOGOUT =================
