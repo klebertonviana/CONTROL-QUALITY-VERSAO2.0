@@ -3360,7 +3360,7 @@ E-mail: ${email}`;
 
 Prezada Aline,
 
-Solicito sua atenção para cancelamento da nota de desligamento, considerando a existência de nota de troca de titularidade procedente para a mesma unidade consumidora.
+Solicito seu apoio para cancelamento da nota de desligamento, considerando a existência de nota de troca de titularidade procedente para a mesma unidade consumidora.
 
 Nota de desligamento:
 ${notasFormatadas}
