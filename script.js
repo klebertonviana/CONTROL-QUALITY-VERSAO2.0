@@ -3245,6 +3245,24 @@ Ressaltamos que somente após a devida atualização no sistema será possível 
         }
       });
 
+} else if (tipo === "emailSupervisaoOutros") {
+
+  document.getElementById("emailDynamicFields").innerHTML = `
+
+    <div class="complaint-field">
+      <label>Assunto</label>
+      <input id="email_assunto_livre" autocomplete="off">
+    </div>
+
+    <div class="complaint-field">
+      <label>Texto do e-mail</label>
+      <textarea id="email_texto_livre" rows="6" style="resize: vertical;"></textarea>
+    </div>
+
+  `;
+
+  document.getElementById("generateEmailButton").disabled = false;
+
     } else {
 
       document.getElementById("emailDynamicFields").innerHTML = `
