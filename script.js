@@ -193,25 +193,43 @@ const usuarios = [
 // ================= LINKS =================
 const linksDentro = {
     "Troca com Análise": "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jKbIdJUOUJRRUpFOVU2TFhKOVJYVVVCOEIwTjM3NS4u",
-  "Reclamação": "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jKbIdJUN0NLQ0JPN0RVNUtXTlZaS1pQVDlLSTVDMy4u",
-"Danos Elétricos": "#",
-"Danos Materiais": "#",
-"Aferição": "#",
-"Devolução de Crédito em Espécie": "#",
-"Nível de Tensão": "#",
+
+  "Reclamação": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
+"Danos Elétricos": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
+"Danos Materiais": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
+"Aferição": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
+"Devolução de Crédito em Espécie": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
+"Nível de Tensão": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
+"Conexão Temporária": "https://forms.office.com/Pages/ResponsePage.aspx?id=Ai-uOBBXEk6Au4NgDD_fHuBDDv4IdJRJlFGjfAo7IX9UQUdTTFI1SzhUMTVIQklWNzRBUDVPNVdVNy4u",
+
   "Plano de Contingência": "https://forms.office.com/pages/responsepage.aspx?id=UtPobFF_KUeKzTo8uhC_jAFRZMlEMmBOhSoASQsPrCNUMlJIRU9ITjBQU0NRSlFZTllMMVBRT1c4Ni4u&route=shorturl",
+
   "Controle de Serviços Manuais": "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jKbIdJUN043NEhYRUFYWVFYNDBLWDJWMEdZMlBDOC4u",
+
   "Reincidência": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=UtPobFF_KUeKzTo8uhC_jAFRZMlEMmBOhSoASQsPrCNUMzZONTJEU0VaNFY4OTlVNVFCOEpLVDZITS4u&route=shorturl",
+
   "Gestão de Leitura": "https://docs.google.com/forms/d/e/1FAIpQLSflahhJcXxrB4h7KiXpvwwPFnAmNclhpdFI5EKnSyNiva1LnQ/viewform",
+
   "Gestão de Horas": "https://1drv.ms/x/c/988790b43fbb1367/IQSA2M10k-mVQ4iy6GFVzfhxAeqMxhbYdTVfQaiofoSsjmk?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0",
+
   "Agenda de Ações": "https://1drv.ms/x/c/988790b43fbb1367/IQTuArTaI8xaQYiQOsNJkaEWAYva8D1Li4p31qZmqQ4t51w?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0",
+
   "Gestão de Atividades": "https://1drv.ms/x/c/988790b43fbb1367/IQRBhaT8HC4DR6tPeMY4SKXPAVKZQVVci8c_-n84OqfNfQA?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0"
 };
 
 const linksFora = {
   "Troca por Análise com Desligamento": "https://1drv.ms/x/c/988790b43fbb1367/IQBnE7s_tJCHIICYbQEAAAAAAb5z4ni4ucOdb8Ofouc_uSs?e=VFqGeb",
+
   "Acompanhamento TSEE": "https://1drv.ms/x/c/988790b43fbb1367/IQB5QkXBFCcdS4qj0n6fh4C7ATcCqxS7VwMNddOwW2y9xOk?e=XxTzim",
+
   "Meu TMA": "https://1drv.ms/x/c/988790b43fbb1367/IQBZjy8TWAlTSqyi_nj5JNOXAaBRLudhA9CQgLGEyoMsW9c?e=JbitAC",
+
   "Nova Agenda Pará": "https://cgb-hub.vercel.app/"
 };
 
@@ -360,7 +378,8 @@ if (title === "Acompanhamento de Serviços") {
     "Danos Materiais",
     "Aferição",
     "Devolução de Crédito em Espécie",
-    "Nível de Tensão"
+    "Nível de Tensão",
+    "Conexão Temporária"
   ];
 
   if (servicosAcompanhamento.includes(title)) {
