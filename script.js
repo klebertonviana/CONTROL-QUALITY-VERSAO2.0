@@ -1318,87 +1318,108 @@ PARCEIRO CIENTE DO PRAZO DE ATENDIMENTO DA SOLICITAÇÃO DE 30 DIAS.`;
 // ================= BAIXAR EXCEL =================
 async function baixarFormularioCredito() {
 
-  const response =
-    await fetch("formularios/devolucao_credito.xlsx");
+  const response = await fetch("formularios/devolucao_credito.xlsx");
 
-  const arrayBuffer =
-    await response.arrayBuffer();
+  const arrayBuffer = await response.arrayBuffer();
 
-  const workbook =
-    XLSX.read(arrayBuffer, { type: "array" });
+  const workbook = new ExcelJS.Workbook();
 
-  const sheet =
-    workbook.Sheets["FORM_I"];
+  await workbook.xlsx.load(arrayBuffer);
+
+  const sheet = workbook.getWorksheet("FORM_I");
 
   function valor(id) {
     return document.getElementById(id)?.value || "";
   }
 
-  sheet["F11"] = { t: "s", v: valor("credito_cc") };
-  sheet["M11"] = { t: "s", v: valor("credito_instalacao") };
-  sheet["Y11"] = { t: "s", v: valor("credito_parceiro") };
-  sheet["AD11"] = { t: "s", v: valor("credito_situacao") };
-  sheet["F13"] = { t: "s", v: valor("credito_titular") };
-  sheet["F15"] = { t: "s", v: valor("credito_endereco") };
-  sheet["F17"] = { t: "s", v: valor("credito_cpf") };
-  sheet["L17"] = { t: "s", v: valor("credito_rg") };
-  sheet["R17"] = { t: "s", v: valor("credito_nascimento") };
-  sheet["AA17"] = { t: "s", v: valor("credito_telefone") };
-  sheet["AC73"] = { t: "s", v: valor("credito_sr") };
+  // ================= DADOS TITULAR =================
+  sheet.getCell("F11").value = valor("credito_cc");
+  sheet.getCell("M11").value = valor("credito_instalacao");
+  sheet.getCell("Y11").value = valor("credito_parceiro");
+  sheet.getCell("AD11").value = valor("credito_situacao");
 
-  const terceiros =
-    valor("credito_terceiros");
+  sheet.getCell("F13").value = valor("credito_titular");
+  sheet.getCell("F15").value = valor("credito_endereco");
+
+  sheet.getCell("F17").value = valor("credito_cpf");
+  sheet.getCell("L17").value = valor("credito_rg");
+  sheet.getCell("R17").value = valor("credito_nascimento");
+  sheet.getCell("AA17").value = valor("credito_telefone");
+
+  sheet.getCell("AC73").value = valor("credito_sr");
+
+  // ================= TERCEIROS =================
+  const terceiros = valor("credito_terceiros");
 
   if (terceiros === "SIM") {
-    sheet["F25"] = { t: "s", v: "X" };
+    sheet.getCell("F25").value = "X";
   }
 
   if (terceiros === "NÃO") {
-    sheet["D25"] = { t: "s", v: "X" };
+    sheet.getCell("D25").value = "X";
   }
 
-  sheet["F27"] = { t: "s", v: valor("credito_responsavel") };
-  sheet["F29"] = { t: "s", v: valor("credito_endereco_representante") };
-  sheet["F31"] = { t: "s", v: valor("credito_cpf_representante") };
-  sheet["L31"] = { t: "s", v: valor("credito_rg_representante") };
-  sheet["R31"] = { t: "s", v: valor("credito_nascimento_representante") };
-  sheet["AA31"] = { t: "s", v: valor("credito_tel_representante") };
-  sheet["F33"] = { t: "s", v: valor("credito_vinculo") };
-  sheet["Q33"] = { t: "s", v: valor("credito_documento") };
+  // ================= REPRESENTANTE =================
+  sheet.getCell("F27").value = valor("credito_responsavel");
+  sheet.getCell("F29").value = valor("credito_endereco_representante");
 
-  sheet["N39"] = { t: "s", v: valor("credito_valor") };
-  sheet["W39"] = { t: "s", v: valor("credito_referencia") };
+  sheet.getCell("F31").value = valor("credito_cpf_representante");
+  sheet.getCell("L31").value = valor("credito_rg_representante");
+  sheet.getCell("R31").value = valor("credito_nascimento_representante");
+  sheet.getCell("AA31").value = valor("credito_tel_representante");
 
-  const tipoPagamento =
-    valor("credito_tipo_pagamento");
+  sheet.getCell("F33").value = valor("credito_vinculo");
+  sheet.getCell("Q33").value = valor("credito_documento");
+
+  // ================= VALORES =================
+  sheet.getCell("N39").value = valor("credito_valor");
+  sheet.getCell("W39").value = valor("credito_referencia");
+
+  // ================= PAGAMENTO =================
+  const tipoPagamento = valor("credito_tipo_pagamento");
 
   if (tipoPagamento === "CONTA BANCÁRIA") {
-    sheet["D49"] = { t: "s", v: "X" };
+    sheet.getCell("D49").value = "X";
   }
 
   if (tipoPagamento === "ORDEM DE PAGAMENTO") {
-    sheet["X49"] = { t: "s", v: "X" };
+    sheet.getCell("X49").value = "X";
   }
 
-  sheet["F51"] = { t: "s", v: valor("credito_banco") };
-  sheet["N51"] = { t: "s", v: valor("credito_conta") };
-  sheet["F55"] = { t: "s", v: valor("credito_agencia") };
+  // ================= DADOS BANCÁRIOS =================
+  sheet.getCell("F51").value = valor("credito_banco");
+  sheet.getCell("N51").value = valor("credito_conta");
+  sheet.getCell("F55").value = valor("credito_agencia");
 
-  const tipoConta =
-    valor("credito_tipo_conta");
+  const tipoConta = valor("credito_tipo_conta");
 
   if (tipoConta === "POUPANÇA") {
-    sheet["N55"] = { t: "s", v: "X" };
+    sheet.getCell("N55").value = "X";
   }
 
   if (tipoConta === "CORRENTE") {
-    sheet["R55"] = { t: "s", v: "X" };
+    sheet.getCell("R55").value = "X";
   }
 
-  XLSX.writeFile(
-    workbook,
-    `DEVOLUCAO_CREDITO_${valor("credito_parceiro") || "CLIENTE"}.xlsx`
+  // ================= DOWNLOAD =================
+  const buffer = await workbook.xlsx.writeBuffer();
+
+  const blob = new Blob(
+    [buffer],
+    {
+      type:
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    }
   );
+
+  const link = document.createElement("a");
+
+  link.href = URL.createObjectURL(blob);
+
+  link.download =
+    `DEVOLUCAO_CREDITO_${valor("credito_parceiro") || "CLIENTE"}.xlsx`;
+
+  link.click();
 }
 
 // ================= CAMPOS OBRIGATÓRIOS - SCRIPTS DINÂMICOS =================
@@ -1447,6 +1468,10 @@ if (clearDynamicScriptButton) {
   document.getElementById("tensaoDiasSemanaArea")?.classList.add("hidden");
   document.getElementById("tensaoQualComercioArea")?.classList.add("hidden");
   gerarScriptNivelTensao();
+} else if (scriptDynamicBadge.textContent === "Devolução de Crédito em Espécie") {
+  document.getElementById("areaRepresentante")?.classList.add("hidden");
+  document.getElementById("areaBanco")?.classList.add("hidden");
+  gerarScriptDevolucaoCredito();
 } else {
   gerarScriptDeslocamentoRamal();
 }
