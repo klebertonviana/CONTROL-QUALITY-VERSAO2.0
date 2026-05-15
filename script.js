@@ -444,6 +444,11 @@ Att. Viúva Negra`
   tipo: "dinamicoDevolucaoCredito",
   texto: "devolução crédito espécie formulario dados bancarios cliente conta contrato"
 },
+{
+  titulo: "AFERIÇÃO",
+  tipo: "dinamicoAfericao",
+  texto: "aferição órgão metrológico anuência supervisão taxa cobrança formulário assinado"
+},
   {
     titulo: "TRANSFERÊNCIA DE PARCELAMENTO EM APROVAÇÃO",
     texto: `Bom dia,
@@ -508,7 +513,6 @@ BackOffice (Antigo):
 BackOffice (Novo):
 Aprend+:
 Sisfeedback:
-SIGA:
 OPER:
 Portal de redefinição de senhas e aplicativo autenticador:
 
@@ -668,6 +672,11 @@ if (script.tipo === "dinamicoNivelTensao") {
 
 if (script.tipo === "dinamicoDevolucaoCredito") {
   abrirFormularioDevolucaoCredito();
+  return;
+}
+
+if (script.tipo === "dinamicoAfericao") {
+  abrirFormularioAfericao();
   return;
 }
 
@@ -1324,6 +1333,131 @@ aplicarMascaraTelefone(
 gerarScriptDevolucaoCredito();
 }
 
+// ================= SCRIPT DINÂMICO - AFERIÇÃO =================
+function abrirFormularioAfericao() {
+
+  scriptSelecionado = {
+    titulo: "AFERIÇÃO",
+    texto: ""
+  };
+
+  scriptsWorkArea.classList.remove("hidden");
+  scriptsWorkArea.classList.remove("simple-mode");
+
+  scriptDynamicFormCard.classList.remove("hidden");
+  scriptResultCard.classList.remove("hidden");
+
+  scriptDynamicBadge.textContent = "Aferição";
+  selectedTitle.textContent = "Script gerado";
+
+  scriptDynamicFields.innerHTML = `
+
+    <div class="dynamic-script-alert complaint-field full">
+      <strong>Prezado colaborador (a),</strong>
+
+      <p>
+        Em caso de dúvidas, orientamos que as informações sejam consultadas na ferramenta Aprende+ da Equatorial Energia.
+      </p>
+    </div>
+
+    <div class="complaint-field full">
+      <label>Nome do titular</label>
+      <input id="afericao_titular" type="text">
+    </div>
+
+    <div class="complaint-field">
+      <label>CPF</label>
+      <input id="afericao_cpf" type="text">
+    </div>
+
+    <div class="complaint-field">
+      <label>Conta contrato</label>
+      <input id="afericao_cc" type="text">
+    </div>
+
+    <div class="complaint-field">
+      <label>Telefone</label>
+      <input id="afericao_telefone" type="text" maxlength="15">
+    </div>
+
+    <div class="complaint-field">
+      <label>Deseja receber resultado via e-mail?</label>
+
+      <select id="afericao_email_opcao">
+        <option value="">Selecione...</option>
+        <option>SIM</option>
+        <option>NÃO</option>
+      </select>
+    </div>
+
+    <div id="areaEmailAfericao" class="complaint-field hidden">
+      <label>E-mail</label>
+      <input id="afericao_email" type="email">
+    </div>
+
+    <div class="complaint-field full">
+      <label>Nome do atendente</label>
+
+      <select id="afericao_atendente">
+        <option value="">Selecione...</option>
+
+        <option value="ABEL TABOSA SILVA SANTOS|T62356">ABEL TABOSA SILVA SANTOS</option>
+        <option value="ADILSON SAMUEL LIMA COELHO|T55828">ADILSON SAMUEL LIMA COELHO</option>
+        <option value="AMANDA REGINA DA SILVA COSTA|A89292721">AMANDA REGINA DA SILVA COSTA</option>
+        <option value="ANA CLARA LOPES DE SOUSA|A35797494">ANA CLARA LOPES DE SOUSA</option>
+        <option value="CAROLINA DA SILVA PENHA|C58826193">CAROLINA DA SILVA PENHA</option>
+        <option value="EVELINE GATO VIEIRA FERREIRA|T26593">EVELINE GATO VIEIRA FERREIRA</option>
+        <option value="JULYANNE MARIA NOGUEIRA RODRIGUES|T48624">JULYANNE MARIA NOGUEIRA RODRIGUES</option>
+        <option value="KLEBERTON ANGELO VIANA DA CRUZ|T17029">KLEBERTON ANGELO VIANA DA CRUZ</option>
+        <option value="MARCIELE FERREIRA SANTIAGO|M97073158">MARCIELE FERREIRA SANTIAGO</option>
+        <option value="MARLIANE SANTOS DA CONCEICAO|T41132">MARLIANE SANTOS DA CONCEICAO</option>
+        <option value="MARLISSON JEAN CASTRO CRUZ|M03183122">MARLISSON JEAN CASTRO CRUZ</option>
+        <option value="THIAGO MAIA DA SILVA|T31280">THIAGO MAIA DA SILVA</option>
+        <option value="CARLOS EDUARDO ARAUJO DE ALMEIDA|T11096">CARLOS EDUARDO ARAUJO DE ALMEIDA</option>
+        <option value="RAIANE BENTES BATISTA|T26595">RAIANE BENTES BATISTA</option>
+      </select>
+    </div>
+
+    <div class="complaint-field full">
+      <button id="baixarFormularioAfericao" class="copy-script-button">
+        <i class="fa-solid fa-file-excel"></i>
+        Baixar formulário preenchido
+      </button>
+    </div>
+  `;
+
+  document
+    .querySelectorAll("#scriptDynamicFields input, #scriptDynamicFields select")
+    .forEach(campo => {
+      campo.addEventListener("input", gerarScriptAfericao);
+      campo.addEventListener("change", gerarScriptAfericao);
+    });
+
+  document
+    .getElementById("afericao_email_opcao")
+    .addEventListener("change", function () {
+
+      document
+        .getElementById("areaEmailAfericao")
+        .classList.toggle(
+          "hidden",
+          this.value !== "SIM"
+        );
+
+      gerarScriptAfericao();
+    });
+
+  aplicarMascaraTelefone(
+    document.getElementById("afericao_telefone")
+  );
+
+  document
+    .getElementById("baixarFormularioAfericao")
+    .addEventListener("click", baixarFormularioAfericao);
+
+  gerarScriptAfericao();
+}
+
 // ================= GERAR SCRIPT =================
 function gerarScriptDevolucaoCredito() {
 
@@ -1361,6 +1495,41 @@ PARCEIRO CIENTE DO PRAZO DE ATENDIMENTO DA SOLICITAÇÃO DE 30 DIAS.`;
 
   } else {
 
+    copyButton.disabled = true;
+    scriptSelecionado = null;
+  }
+}
+
+// ================= GERAR SCRIPT - AFERIÇÃO =================
+function gerarScriptAfericao() {
+
+  const titular =
+    document.getElementById("afericao_titular")?.value.trim().toUpperCase() || "";
+
+  const contaContrato =
+    document.getElementById("afericao_cc")?.value.trim().toUpperCase() || "";
+
+  const texto = `SOLICITADO O PEDIDO DE AFERIÇÃO POR ÓRGÃO METROLÓGICO, COM A DEVIDA ANUÊNCIA DA SUPERVISÃO. CLIENTE ${titular || "XXX"}, TITULAR DA CC ${contaContrato || "XXXX"} ESTÁ CIENTE DA TAXA DE COBRANÇA. O DOCUMENTO EM ANEXO FOI DEVIDAMENTE PREENCHIDO, DATADO E ASSINADO.`;
+
+  selectedText.textContent = texto;
+
+  atualizarCamposObrigatoriosScript([
+    "afericao_titular",
+    "afericao_cpf",
+    "afericao_cc",
+    "afericao_telefone",
+    "afericao_email_opcao",
+    "afericao_atendente"
+  ]);
+
+  if (titular && contaContrato) {
+    copyButton.disabled = false;
+
+    scriptSelecionado = {
+      titulo: "AFERIÇÃO",
+      texto: texto
+    };
+  } else {
     copyButton.disabled = true;
     scriptSelecionado = null;
   }
@@ -1473,6 +1642,60 @@ sheet.getCell("K55").value = valor("credito_digito_agencia");
 
   link.download =
     `DEVOLUCAO_CREDITO_${valor("credito_parceiro") || "CLIENTE"}.xlsx`;
+
+  link.click();
+}
+
+// ================= BAIXAR EXCEL - AFERIÇÃO =================
+async function baixarFormularioAfericao() {
+
+  const response = await fetch("formularios/afericao.xlsx");
+
+  const arrayBuffer = await response.arrayBuffer();
+
+  const workbook = new ExcelJS.Workbook();
+
+  await workbook.xlsx.load(arrayBuffer);
+
+  const sheet = workbook.getWorksheet("SOLIC REAGEN CANC REVISÃO");
+
+  function valor(id) {
+    return document.getElementById(id)?.value || "";
+  }
+
+  const atendenteSelecionado = valor("afericao_atendente");
+  const [nomeAtendente, loginAtendente] = atendenteSelecionado
+    ? atendenteSelecionado.split("|")
+    : ["", ""];
+
+  sheet.getCell("B4").value = valor("afericao_titular");
+  sheet.getCell("H4").value = valor("afericao_cpf");
+  sheet.getCell("K4").value = valor("afericao_cc");
+  sheet.getCell("B6").value = valor("afericao_telefone");
+
+  if (valor("afericao_email_opcao") === "SIM") {
+    sheet.getCell("F6").value = valor("afericao_email");
+  }
+
+  sheet.getCell("B33").value = nomeAtendente;
+  sheet.getCell("H33").value = loginAtendente;
+
+  const buffer = await workbook.xlsx.writeBuffer();
+
+  const blob = new Blob(
+    [buffer],
+    {
+      type:
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    }
+  );
+
+  const link = document.createElement("a");
+
+  link.href = URL.createObjectURL(blob);
+
+  link.download =
+    `AFERICAO_${valor("afericao_titular") || "CLIENTE"}.xlsx`;
 
   link.click();
 }
