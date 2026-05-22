@@ -1646,58 +1646,100 @@ sheet.getCell("K55").value = valor("credito_digito_agencia");
   link.click();
 }
 
-// ================= BAIXAR EXCEL - AFERIÇÃO =================
+// ================= BAIXAR EXCEL - AFERIÇÃO PRESERVANDO MODELO =================
 async function baixarFormularioAfericao() {
-
-  const response = await fetch("formularios/afericao.xlsx");
-
-  const arrayBuffer = await response.arrayBuffer();
-
-  const workbook = new ExcelJS.Workbook();
-
-  await workbook.xlsx.load(arrayBuffer);
-
-  const sheet = workbook.getWorksheet("SOLIC REAGEN CANC REVISÃO");
-
-  function valor(id) {
-    return document.getElementById(id)?.value || "";
-  }
-
-  const atendenteSelecionado = valor("afericao_atendente");
-  const [nomeAtendente, loginAtendente] = atendenteSelecionado
-    ? atendenteSelecionado.split("|")
-    : ["", ""];
-
-  sheet.getCell("B4").value = valor("afericao_titular");
-  sheet.getCell("H4").value = valor("afericao_cpf");
-  sheet.getCell("K4").value = valor("afericao_cc");
-  sheet.getCell("B6").value = valor("afericao_telefone");
-
-  if (valor("afericao_email_opcao") === "SIM") {
-    sheet.getCell("F6").value = valor("afericao_email");
-  }
-
-  sheet.getCell("B33").value = nomeAtendente;
-  sheet.getCell("H33").value = loginAtendente;
-
-  const buffer = await workbook.xlsx.writeBuffer();
-
-  const blob = new Blob(
-    [buffer],
-    {
-      type:
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  try {
+    function valor(id) {
+      return document.getElementById(id)?.value || "";
     }
-  );
 
-  const link = document.createElement("a");
+    const response = await fetch("formularios/afericao.xlsx");
 
-  link.href = URL.createObjectURL(blob);
+    if (!response.ok) {
+      alert("Erro: o arquivo formularios/afericao.xlsx não foi encontrado. Verifique se ele está no GitHub dentro da pasta formularios.");
+      return;
+    }
 
-  link.download =
-    `AFERICAO_${valor("afericao_titular") || "CLIENTE"}.xlsx`;
+    const arrayBuffer = await response.arrayBuffer();
 
-  link.click();
+    if (typeof JSZip === "undefined") {
+      alert("Erro: a biblioteca JSZip não carregou.");
+      return;
+    }
+
+    const zip = await JSZip.loadAsync(arrayBuffer);
+
+    const sheetPath = "xl/worksheets/sheet1.xml";
+    const sheetFile = zip.file(sheetPath);
+
+    if (!sheetFile) {
+      alert("Erro: não foi possível localizar a aba principal do Excel.");
+      return;
+    }
+
+    let sheetXml = await sheetFile.async("text");
+
+    function setCell(cellRef, value) {
+      value = String(value || "");
+
+      const safeValue = value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+      const cellRegex = new RegExp(
+        `<c[^>]*r="${cellRef}"[^>]*>[\\s\\S]*?<\\/c>`
+      );
+
+      const newCell =
+        `<c r="${cellRef}" t="inlineStr">` +
+        `<is><t>${safeValue}</t></is>` +
+        `</c>`;
+
+      if (cellRegex.test(sheetXml)) {
+        sheetXml = sheetXml.replace(cellRegex, newCell);
+      }
+    }
+
+    const atendenteSelecionado = valor("afericao_atendente");
+    const [nomeAtendente, loginAtendente] = atendenteSelecionado
+      ? atendenteSelecionado.split("|")
+      : ["", ""];
+
+    setCell("B4", valor("afericao_titular").toUpperCase());
+    setCell("H4", valor("afericao_cpf"));
+    setCell("K4", valor("afericao_cc"));
+    setCell("B6", valor("afericao_telefone"));
+
+    if (valor("afericao_email_opcao") === "SIM") {
+      setCell("F6", valor("afericao_email"));
+    }
+
+    setCell("B33", nomeAtendente);
+    setCell("H33", loginAtendente);
+
+    zip.file(sheetPath, sheetXml);
+
+    const blob = await zip.generateAsync({
+      type: "blob",
+      mimeType:
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `AFERICAO_${valor("afericao_titular") || "CLIENTE"}.xlsx`;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+
+  } catch (erro) {
+    console.error(erro);
+    alert("Erro ao gerar o formulário de aferição. Veja se o arquivo afericao.xlsx está na pasta formularios.");
+  }
 }
 
 // ================= MÁSCARA DATA =================
@@ -4780,3 +4822,16 @@ document.querySelectorAll("[data-copy-target]").forEach(btn => {
     }, 2000);
   });
 });
+
+// ================= LIMPAR RESULTADO EMAIL =================
+
+const clearEmailResultButton = document.getElementById("clearEmailResultButton");
+
+if (clearEmailResultButton) {
+  clearEmailResultButton.addEventListener("click", () => {
+    document.getElementById("emailTo").value = "";
+    document.getElementById("emailCc").value = "";
+    document.getElementById("emailSubject").value = "";
+    document.getElementById("emailBody").value = "";
+  });
+}
