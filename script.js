@@ -1691,14 +1691,25 @@ async function baixarFormularioAfericao() {
         `<c[^>]*r="${cellRef}"[^>]*>[\\s\\S]*?<\\/c>`
       );
 
-      const newCell =
-        `<c r="${cellRef}" t="inlineStr">` +
-        `<is><t>${safeValue}</t></is>` +
-        `</c>`;
+      const newCell = originalCell
+  .replace(/t="[^"]*"/, 't="inlineStr"')
+  .replace(/<v>[\s\S]*?<\/v>/, "")
+  .replace(/<is>[\s\S]*?<\/is>/, "")
+  .replace(/<\/c>/, `<is><t>${safeValue}</t></is></c>`);
 
-      if (cellRegex.test(sheetXml)) {
-        sheetXml = sheetXml.replace(cellRegex, newCell);
-      }
+      const match = sheetXml.match(cellRegex);
+
+if (match) {
+  const originalCell = match[0];
+
+  const newCell = originalCell
+    .replace(/t="[^"]*"/, 't="inlineStr"')
+    .replace(/<v>[\s\S]*?<\/v>/, "")
+    .replace(/<is>[\s\S]*?<\/is>/, "")
+    .replace(/<\/c>/, `<is><t>${safeValue}</t></is></c>`);
+
+  sheetXml = sheetXml.replace(originalCell, newCell);
+}
     }
 
     const atendenteSelecionado = valor("afericao_atendente");
