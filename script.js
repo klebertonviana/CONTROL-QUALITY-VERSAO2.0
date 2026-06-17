@@ -269,6 +269,21 @@ profileGestor.textContent = user.gestor;
 
 profilePhoto.src = `fotos/${user.matricula}.jpg`;
 
+const primeiroNome = user.nome.split(" ")[0];
+
+document.getElementById("homeWelcomeText").textContent =
+  `Olá, ${formatarNomeProprio(primeiroNome)}! 👋`;
+
+document.getElementById("homeCargo").textContent = user.cargo;
+document.getElementById("homeAgencia").textContent = user.agencia || "-";
+document.getElementById("homeRegional").textContent = user.regional;
+
+document.getElementById("homeUserPhoto").src =
+  `fotos/${user.matricula}.jpg`;
+
+document.getElementById("homeLastAccess").textContent =
+  new Date().toLocaleString("pt-BR");
+
 lastAccessText.textContent = new Date().toLocaleString("pt-BR");
 
 loginScreen.classList.add("hidden");
