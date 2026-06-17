@@ -2182,3 +2182,21 @@ button,
 .email-actions {
   margin-top: 22px;
 }
+
+/* AJUSTE ESPAÇO ENTRE BOTÕES DO CADASTRO DE LOGRADOURO */
+.email-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* CAMPO OCUPANDO LINHA INTEIRA NO GERADOR DE E-MAIL */
+#emailDynamicFields .complaint-field.full {
+  grid-column: 1 / -1;
+}
+
+#email_texto_livre {
+  width: 100%;
+  min-height: 400px;
+}

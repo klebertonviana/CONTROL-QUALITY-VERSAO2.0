@@ -3934,14 +3934,18 @@ Ressaltamos que somente após a devida atualização no sistema será realizada 
 
   document.getElementById("emailDynamicFields").innerHTML = `
 
-    <div class="complaint-field">
+    <div class="complaint-field full">
       <label>Assunto</label>
       <input id="email_assunto_livre" autocomplete="off">
     </div>
 
-    <div class="complaint-field">
+    <div class="complaint-field full">
       <label>Texto do e-mail</label>
-      <textarea id="email_texto_livre" rows="6" style="resize: vertical;"></textarea>
+      <textarea
+        id="email_texto_livre"
+        rows="10"
+        style="resize: vertical; min-height: 220px;">
+      </textarea>
     </div>
 
   `;
