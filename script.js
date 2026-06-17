@@ -77,8 +77,8 @@ const usuarios = [
     gestor: "Kleberton Viana - Supervisor de agência III"
   },
   {
-    matricula: "21945",
-    nome: "ABEL TABOSA SILVA SANTOS",
+    matricula: "24019",
+    nome: "IVANILDE SILVA DA SILVA",
     cargo: "Atendente Presencial I",
     agencia: "Santarém",
     regional: "Oeste",
@@ -93,8 +93,8 @@ const usuarios = [
     gestor: "Kleberton Viana - Supervisor de agência III"
   },
   {
-    matricula: "21054",
-    nome: "ANA CAROLINA MAGALHAES DE SENA",
+    matricula: "24043",
+    nome: "KARIELLEN RAISSA FERNANDES LIMA",
     cargo: "Atendente Presencial I",
     agencia: "Santarém",
     regional: "Oeste",
@@ -111,14 +111,6 @@ const usuarios = [
   {
     matricula: "22340",
     nome: "CAROLINA DA SILVA PENHA",
-    cargo: "Atendente Presencial I",
-    agencia: "Santarém",
-    regional: "Oeste",
-    gestor: "Kleberton Viana - Supervisor de agência III"
-  },
-  {
-    matricula: "11542",
-    nome: "EVELINE GATO VIEIRA FERREIRA",
     cargo: "Atendente Presencial I",
     agencia: "Santarém",
     regional: "Oeste",
@@ -155,14 +147,6 @@ const usuarios = [
     agencia: "Santarém",
     regional: "Oeste",
     gestor: "Kleberton Viana - Supervisor de agência III"
-  },
-  {
-    matricula: "13870",
-    nome: "THIAGO MAIA DA SILVA",
-    cargo: "Atendente Volante I",
-    agencia: "",
-    regional: "Oeste",
-    gestor: "Carlos Eduardo - Coordenador Regional II"
   },
   {
     matricula: "5054",
