@@ -198,13 +198,7 @@ const linksDentro = {
 
   "Reincidência": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=UtPobFF_KUeKzTo8uhC_jAFRZMlEMmBOhSoASQsPrCNUMzZONTJEU0VaNFY4OTlVNVFCOEpLVDZITS4u&route=shorturl",
 
-  "Gestão de Leitura": "https://docs.google.com/forms/d/e/1FAIpQLSflahhJcXxrB4h7KiXpvwwPFnAmNclhpdFI5EKnSyNiva1LnQ/viewform",
-
-  "Gestão de Horas": "https://1drv.ms/x/c/988790b43fbb1367/IQSA2M10k-mVQ4iy6GFVzfhxAeqMxhbYdTVfQaiofoSsjmk?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0",
-
-  "Agenda de Ações": "https://1drv.ms/x/c/988790b43fbb1367/IQTuArTaI8xaQYiQOsNJkaEWAYva8D1Li4p31qZmqQ4t51w?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0",
-
-  "Gestão de Atividades": "https://1drv.ms/x/c/988790b43fbb1367/IQRBhaT8HC4DR6tPeMY4SKXPAVKZQVVci8c_-n84OqfNfQA?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0"
+  "Gestão de Horas": "https://1drv.ms/x/c/988790b43fbb1367/IQSA2M10k-mVQ4iy6GFVzfhxAeqMxhbYdTVfQaiofoSsjmk?em=2&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&edaebf=rslc0" 
 };
 
 const linksFora = {
@@ -212,7 +206,7 @@ const linksFora = {
 
   "Acompanhamento TSEE": "https://1drv.ms/x/c/988790b43fbb1367/IQB5QkXBFCcdS4qj0n6fh4C7ATcCqxS7VwMNddOwW2y9xOk?e=XxTzim",
 
-  "Meu TMA": "https://1drv.ms/x/c/988790b43fbb1367/IQBZjy8TWAlTSqyi_nj5JNOXAaBRLudhA9CQgLGEyoMsW9c?e=JbitAC",
+  "Gestão de Leitura": "https://cgbengenharia.sharepoint.com/:x:/s/DadosBI/IQAMfviMPxl0QLwX2WIfSDC6AXKQcDaZcNAKkvlsMEg-BJc?rtime=i3ftIoq_3kg",
 
   "Nova Agenda Pará": "https://cgb-hub.vercel.app/"
 };
@@ -1385,18 +1379,18 @@ function abrirFormularioAfericao() {
       <select id="afericao_atendente">
         <option value="">Selecione...</option>
 
-        <option value="ABEL TABOSA SILVA SANTOS|T62356">ABEL TABOSA SILVA SANTOS</option>
         <option value="ADILSON SAMUEL LIMA COELHO|T55828">ADILSON SAMUEL LIMA COELHO</option>
+<option value="IVANILDE SILVA DA SILVA|I38061825">IVANILDE SILVA DA SILVA</option>
+<option value="LUANA CAIRES BARBOSA|L13833478">LUANA CAIRES BARBOSA</option>
+<option value="KARIELLEN RAISSA FERNANDES LIMA|K78453593">KARIELLEN RAISSA FERNANDES LIMA</option>
         <option value="AMANDA REGINA DA SILVA COSTA|A89292721">AMANDA REGINA DA SILVA COSTA</option>
         <option value="ANA CLARA LOPES DE SOUSA|A35797494">ANA CLARA LOPES DE SOUSA</option>
         <option value="CAROLINA DA SILVA PENHA|C58826193">CAROLINA DA SILVA PENHA</option>
-        <option value="EVELINE GATO VIEIRA FERREIRA|T26593">EVELINE GATO VIEIRA FERREIRA</option>
         <option value="JULYANNE MARIA NOGUEIRA RODRIGUES|T48624">JULYANNE MARIA NOGUEIRA RODRIGUES</option>
         <option value="KLEBERTON ANGELO VIANA DA CRUZ|T17029">KLEBERTON ANGELO VIANA DA CRUZ</option>
         <option value="MARCIELE FERREIRA SANTIAGO|M97073158">MARCIELE FERREIRA SANTIAGO</option>
         <option value="MARLIANE SANTOS DA CONCEICAO|T41132">MARLIANE SANTOS DA CONCEICAO</option>
         <option value="MARLISSON JEAN CASTRO CRUZ|M03183122">MARLISSON JEAN CASTRO CRUZ</option>
-        <option value="THIAGO MAIA DA SILVA|T31280">THIAGO MAIA DA SILVA</option>
         <option value="CARLOS EDUARDO ARAUJO DE ALMEIDA|T11096">CARLOS EDUARDO ARAUJO DE ALMEIDA</option>
         <option value="RAIANE BENTES BATISTA|T26595">RAIANE BENTES BATISTA</option>
       </select>
@@ -3060,27 +3054,37 @@ document.querySelector("#emailPage .email-work-area")?.classList.remove("hidden"
 
     } else if (tipo === "conexaoMla") {
 
-      document.getElementById("emailDynamicFields").innerHTML = `
-        <div class="complaint-field">
-          <label>Nome da comunidade</label>
-          <input id="email_comunidade" autocomplete="off">
-        </div>
+  document.getElementById("emailDynamicFields").innerHTML = `
+    <div class="complaint-field">
+      <label>Nome da comunidade</label>
+      <input id="email_comunidade" autocomplete="off">
+    </div>
 
-        <div class="complaint-field">
-          <label>Nome do cliente</label>
-          <input id="email_cliente" autocomplete="off">
-        </div>
+    <div class="complaint-field">
+      <label>Nome do cliente</label>
+      <input id="email_cliente" autocomplete="off">
+    </div>
 
-        <div class="complaint-field">
-          <label>Telefone para retorno</label>
-          <input id="email_telefone" autocomplete="off">
-        </div>
+    <div class="complaint-field">
+      <label>Telefone para retorno</label>
+      <input id="email_telefone" autocomplete="off">
+    </div>
 
-        <div class="complaint-field">
-          <label>E-mail para retorno</label>
-          <input id="email_email" autocomplete="off">
-        </div>
-      `;
+    <div class="complaint-field">
+      <label>E-mail para retorno</label>
+      <input id="email_email" autocomplete="off">
+    </div>
+
+    <div class="complaint-field">
+      <label>Latitude</label>
+      <input id="email_latitude" autocomplete="off">
+    </div>
+
+    <div class="complaint-field">
+      <label>Longitude</label>
+      <input id="email_longitude" autocomplete="off">
+    </div>
+  `;
 
       document.getElementById("generateEmailButton").disabled = false;
 
@@ -3926,113 +3930,6 @@ Ressaltamos que somente após a devida atualização no sistema será realizada 
 
       document.getElementById("generateEmailButton").disabled = false;
 
-    } else if (tipo === "cartaAnuencia") {
-
-      document.getElementById("emailDynamicFields").innerHTML = `
-        <div class="complaint-field">
-          <label>O status da intimação está PROTESTADO ou CONFIRMADO?</label>
-          <select id="email_status_intimacao">
-            <option value="">Selecione</option>
-            <option value="confirmado">CONFIRMADO</option>
-            <option value="protestado">PROTESTADO</option>
-          </select>
-        </div>
-
-        <div id="emailCartaAnuenciaArea"></div>
-      `;
-
-      document.getElementById("generateEmailButton").disabled = true;
-
-      document.getElementById("email_status_intimacao").addEventListener("change", () => {
-        const status = document.getElementById("email_status_intimacao").value;
-        const area = document.getElementById("emailCartaAnuenciaArea");
-
-        document.getElementById("emailTo").value = "";
-        document.getElementById("emailCc").value = "";
-        document.getElementById("emailSubject").value = "";
-        document.getElementById("emailBody").value = "";
-        document.getElementById("generateEmailButton").disabled = true;
-
-        if (status === "confirmado") {
-          area.innerHTML = `
-            <div class="complaint-empty-state aviso-carta">
-              <i class="fa-solid fa-circle-info"></i>
-              <strong>Atenção</strong>
-              <span>
-Prezado colaborador,
-
-Caso o status da intimação esteja como CONFIRMADO, orientar o cliente a comparecer ao cartório no qual foi intimado para realizar o pagamento da fatura, acrescido da taxa de intimação junto ao órgão competente.
-
-Caso o cliente tenha efetuado o pagamento da fatura enquanto o status da intimação ainda constava como CONFIRMADO, informar que o título seguirá para protesto, conforme a Lei do Protesto (Lei nº 9.492/1997). Nessa situação, será necessário aguardar a atualização do status da intimação para PROTESTADO, para que então seja possível solicitar a carta de anuência.
-              </span>
-            </div>
-          `;
-        }
-
-        if (status === "protestado") {
-          area.innerHTML = `
-            <div class="complaint-field">
-              <label>O débito da fatura já se encontra arrecadado no sistema SAP CRM?</label>
-              <select id="email_debito_arrecadado">
-                <option value="">Selecione</option>
-                <option value="nao">NÃO</option>
-                <option value="sim">SIM</option>
-              </select>
-            </div>
-
-            <div id="emailCartaAnuenciaDados"></div>
-          `;
-
-          document.getElementById("email_debito_arrecadado").addEventListener("change", () => {
-            const arrecadado = document.getElementById("email_debito_arrecadado").value;
-            const dados = document.getElementById("emailCartaAnuenciaDados");
-
-            document.getElementById("emailTo").value = "";
-            document.getElementById("emailCc").value = "";
-            document.getElementById("emailSubject").value = "";
-            document.getElementById("emailBody").value = "";
-            document.getElementById("generateEmailButton").disabled = true;
-
-            if (arrecadado === "nao") {
-              dados.innerHTML = `
-                <div class="complaint-empty-state aviso-carta">
-                  <i class="fa-solid fa-circle-info"></i>
-                  <strong>Atenção</strong>
-                  <span>
-Prezado colaborador,
-
-Considerando que o referido débito ainda não se encontra atualizado no sistema da Equatorial (SAP CRM), orientamos aguardar a efetivação da arrecadação, a qual ocorre de forma automática.
-
-Ressaltamos que somente após a devida atualização no sistema será possível realizar a solicitação da carta de anuência.
-                  </span>
-                </div>
-              `;
-            }
-
-            if (arrecadado === "sim") {
-              dados.innerHTML = `
-                <div class="complaint-field">
-                  <label>Titular</label>
-                  <input id="email_titular" autocomplete="off">
-                </div>
-
-                <div class="complaint-field">
-                  <label>CPF / CNPJ</label>
-                  <input id="email_documento" autocomplete="off">
-                </div>
-
-                <div class="complaint-field">
-                  <label>Conta contrato</label>
-                  <input id="email_conta" autocomplete="off">
-                </div>
-              `;
-
-              document.getElementById("generateEmailButton").disabled = false;
-            }
-          });
-        }
-      });
-
 } else if (tipo === "emailSupervisaoOutros") {
 
   document.getElementById("emailDynamicFields").innerHTML = `
@@ -4116,7 +4013,7 @@ if (emailTipoSelecionado === "documentoJudicialDescumprimento") {
     "descumprimento@equatorialenergia.com.br";
 
   document.getElementById("emailCc").value =
-    "evelyn.mattos@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+    "evelyn.mattos@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
   document.getElementById("emailSubject").value =
     `DESCUMPRIMENTO - PROCESSO N° ${processo} / ${formatarTextoPadrao(cliente)} - CONTA CONTRATO: ${conta} - ${formatarTextoPadrao(agencia)}`.toUpperCase();
@@ -4152,7 +4049,7 @@ if (emailTipoSelecionado === "recebimentoDocumentoJudicial") {
     "liminar@equatorialenergia.com.br; juridico.pa@equatorialenergia.com.br;";
 
   document.getElementById("emailCc").value =
-    "evelyn.mattos@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+    "evelyn.mattos@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
   document.getElementById("emailSubject").value =
     `${tipo} - PROCESSO N° ${processo} / ${formatarTextoPadrao(cliente)} - CONTA CONTRATO: ${conta} - ${formatarTextoPadrao(agencia)}`.toUpperCase();
@@ -4186,10 +4083,10 @@ Permanecemos à disposição para quaisquer esclarecimentos adicionais.`;
     const hoje = new Date().toLocaleDateString("pt-BR");
 
     document.getElementById("emailTo").value =
-      "vanessa.maia@equatorialenergia.com.br; jerlison.tavares@equatorialenergia.com.br; jose.junior1@equatorialenergia.com.br";
+      "kleberton.cruz@cgbengenharia.com.br";
 
     document.getElementById("emailCc").value =
-      "paola.moreira@equatorialenergia.com.br; lana.gomes@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; aline.riker@equatorialenergia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br;    marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       `SOLICITAÇÃO PODA DE ÁRVORE Nº ${numero} - CONTA CONTRATO: ${conta} – ${cidade}`.toUpperCase();
@@ -4197,14 +4094,16 @@ Permanecemos à disposição para quaisquer esclarecimentos adicionais.`;
     document.getElementById("emailBody").value =
 `${saudacaoHorario()}
 
-Prezados,
+Prezado, Kleberton
 
 Segue solicitação poda de árvore entregue hoje ${hoje} na agência Santarém, cliente está ciente que será realizado a comunicação ao mesmo em até 20 dias, para informar data prevista para atendimento da sua solicitação.
 
 Solicitante: ${solicitante}
 Telefone: ${telefone}
 Endereço: ${endereco}
-E-mail: ${email}`;
+E-mail: ${email}
+
+Permaneço à disposição para quaisquer esclarecimentos adicionais.`;
 
     return;
   }
@@ -4219,7 +4118,7 @@ E-mail: ${email}`;
       "aline.riker@equatorialenergia.com.br";
 
     document.getElementById("emailCc").value =
-      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; juliana.lima@equatorialenergia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  juliana.lima@equatorialenergia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       "PRIORIDADE - CANCELAMENTO DE DESLIGAMENTO";
@@ -4266,7 +4165,7 @@ if (emailTipoSelecionado === "oficioCliente") {
     "aline.riker@equatorialenergia.com.br;";
 
   document.getElementById("emailCc").value =
-    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; juliana.lima@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  juliana.lima@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
   document.getElementById("emailSubject").value =
     `OFÍCIO - CLIENTE: ${parceiro}${assuntoConta} - AGÊNCIA ${formatarTextoPadrao(agencia)}`.toUpperCase();
@@ -4296,7 +4195,7 @@ if (emailTipoSelecionado === "processarTrocaProcedente") {
     "claudianne.oliveira@equatorialservicos.com.br";
 
   document.getElementById("emailCc").value =
-    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; rodrigo.machado@equatorialservicos.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; rodrigo.machado@equatorialservicos.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
   document.getElementById("emailSubject").value =
     "EQTL PA - PROCESSAMENTO DE TROCA DE TITULARIDADE - REGIONAL OESTE";
@@ -4332,7 +4231,7 @@ Permaneço à disposição para quaisquer esclarecimentos adicionais.`;
       "maria.santos.silva@equatorialenergia.com.br";
 
     document.getElementById("emailCc").value =
-      "e.silva@equatorialenergia.com.br; pedro.souza@equatorialenergia.com.br; tiago.lauriano@equatorialenergia.com.br; aldelino.silva@equatorialenergia.com.br; edmilson.junior@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "e.silva@equatorialenergia.com.br; pedro.souza@equatorialenergia.com.br; tiago.lauriano@equatorialenergia.com.br; aldelino.silva@equatorialenergia.com.br; edmilson.junior@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       `${tituloOcorrencia} - CONTA CONTRATO: ${conta} - ${cidade}`.toUpperCase();
@@ -4382,7 +4281,7 @@ if (emailTipoSelecionado === "plptRemotoMla") {
     "eduardo.ribeiro@cgbengenharia.com.br";
 
   document.getElementById("emailCc").value =
-    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
   document.getElementById("emailSubject").value =
     "SOLICITAÇÃO DE CADASTRO PLPT REMOTO (MLA) NO SISTEMA SAP";
@@ -4407,16 +4306,18 @@ A supervisão da agência, na pessoa do Sr. Kleberton Viana, ora copiado, perman
 }
 
   if (emailTipoSelecionado === "conexaoMla") {
-    const comunidade = document.getElementById("email_comunidade")?.value.trim() || "";
-    const cliente = document.getElementById("email_cliente")?.value.trim() || "";
-    const telefone = document.getElementById("email_telefone")?.value.trim() || "";
-    const email = document.getElementById("email_email")?.value.trim() || "";
+  const comunidade = document.getElementById("email_comunidade")?.value.trim() || "";
+  const cliente = document.getElementById("email_cliente")?.value.trim() || "";
+  const telefone = document.getElementById("email_telefone")?.value.trim() || "";
+  const email = document.getElementById("email_email")?.value.trim() || "";
+  const latitude = document.getElementById("email_latitude")?.value.trim() || "";
+  const longitude = document.getElementById("email_longitude")?.value.trim() || "";
 
     document.getElementById("emailTo").value =
       "geraldo.silva@equatorialenergia.com.br; yuri.souza@equatorialenergia.com.br; matheus.c.soares@equatorialenergia.com.br";
 
     document.getElementById("emailCc").value =
-      "juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; suzane.oliveira@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; meciano.evaristo@equatorialenergia.com.br; carlindo.junior@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; suzane.oliveira@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; meciano.evaristo@equatorialenergia.com.br; carlindo.junior@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       `SOLICITAÇÃO DE ADESÃO – PROJETO PLPT REMOTO – ${comunidade}`.toUpperCase();
@@ -4426,13 +4327,14 @@ A supervisão da agência, na pessoa do Sr. Kleberton Viana, ora copiado, perman
 
 Prezados,
 
-Encaminhamos, para conhecimento e análise, o ofício entregue na agência de Santarém da ${comunidade}, referente à solicitação de adesão ao Projeto PLPT Remoto, conforme documento anexo.
+Encaminhamos, para conhecimento e análise, o ofício entregue na agência de Santarém da comunidade ${formatarNomeProprio(comunidade)}, referente à solicitação de adesão ao Projeto PLPT Remoto, conforme documento anexo.
 
 Segue dados do solicitante:
 
 Nome: ${formatarTextoPadrao(cliente)}
 Telefone para retorno: ${telefone}
 E-mail para retorno: ${email}
+Coordenadas: ${latitude},${longitude}
 
 Permanecemos à disposição para quaisquer esclarecimentos adicionais.`;
 
@@ -4459,7 +4361,7 @@ Permanecemos à disposição para quaisquer esclarecimentos adicionais.`;
       "aline.riker@equatorialenergia.com.br";
 
     document.getElementById("emailCc").value =
-      "nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; carlindo.junior@equatorialenergia.com.br; suzane.oliveira@equatorialenergia.com.br; meciano.evaristo@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; carlindo.junior@equatorialenergia.com.br; suzane.oliveira@equatorialenergia.com.br; meciano.evaristo@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       `OFICIO - ASSOCIAÇÃO DE MORADORES ${preposicao} ${associacao}`.toUpperCase();
@@ -4505,7 +4407,7 @@ E-mail de retorno: ${email}`;
       "kleberton.cruz@cgbengenharia.com.br";
 
     document.getElementById("emailCc").value =
-      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       "EQTL PA - ESTORNO DE TROCA DE TITULARIDADE COM FATURA - REGIONAL OESTE";
@@ -4566,7 +4468,7 @@ Permaneço à disposição para quaisquer esclarecimentos adicionais.`;
       "kleberton.cruz@cgbengenharia.com.br";
 
     document.getElementById("emailCc").value =
-      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       "EQTL PA - TRANSFERÊNCIA DE TROCA DE TITULARIDADE E FATURA - REGIONAL OESTE";
@@ -4609,7 +4511,7 @@ Permaneço à disposição para quaisquer esclarecimentos adicionais.`;
       "claudianna.gomes@equatorialenergia.com.br";
 
     document.getElementById("emailCc").value =
-      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       `SOLICITAÇÃO DE RETIRADA DE NEGATIVAÇÃO - CPF: ${documento} - CONTA CONTRATO: ${conta}`;
@@ -4642,7 +4544,7 @@ Permaneço à disposição para quaisquer esclarecimentos adicionais.`;
   const solicitante = document.getElementById("email_solicitante")?.value.trim() || "";
 
   const copiaBase =
-    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; meciano.evaristo@equatorialenergia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+    "tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  juliana.lima@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; nayra.pinto@equatorialenergia.com.br; gilliard.vaz@equatorialenergia.com.br; miriam.godinho@equatorialenergia.com.br; meciano.evaristo@equatorialenergia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
   function aplicarRoteamentoPorCidade(cidadeSelecionada) {
     const grupoSuzane = ["SANTARÉM E REGIÃO", "SANTARÉM", "MOJUÍ DOS CAMPOS", "BELTERRA"];
@@ -4744,7 +4646,7 @@ E-mail: ${email}`;
       "laura.lima@dinamo.srv.br; vinicius.costa@dinamo.srv.br";
 
     document.getElementById("emailCc").value =
-      "rosiane.ferreira@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "rosiane.ferreira@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       "EQTL PA - SOLICITAÇÃO DE CADASTRO DE LOGRADOURO - REGIONAL OESTE";
@@ -4770,7 +4672,7 @@ Permaneço à disposição para quaisquer dúvidas ou esclarecimentos.`;
       "s_protesto@equatorialenergia.com.br";
 
     document.getElementById("emailCc").value =
-      "ISRAEL.SOUSA@EQUATORIALENERGIA.COM.BR; gilliard.vaz@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br; eveline.gato@cgbengenharia.com.br; marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br; abel.tabosa@cgbengenharia.com.br; amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
+      "ISRAEL.SOUSA@EQUATORIALENERGIA.COM.BR; gilliard.vaz@equatorialenergia.com.br; aline.riker@equatorialenergia.com.br; juliana.lima@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br;  carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
 
     document.getElementById("emailSubject").value =
       `EQTL PA - SOLICITAÇÃO DE CARTA DE ANUÊNCIA - CONTA CONTRATO: ${conta} - REGIONAL OESTE`;
