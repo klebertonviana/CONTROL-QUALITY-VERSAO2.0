@@ -2177,3 +2177,8 @@ button,
   font-size: 11px !important;
   line-height: 1.2 !important;
 }
+
+/* AJUSTE BOTÃO GERAR E-MAIL */
+.email-actions {
+  margin-top: 22px;
+}
