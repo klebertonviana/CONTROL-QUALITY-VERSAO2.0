@@ -2200,3 +2200,22 @@ button,
   width: 100%;
   min-height: 400px;
 }
+
+/* AJUSTE FOTO DO PERFIL - EQUILIBRADO */
+.profile-avatar {
+  width: 172px !important;
+  height: 172px !important;
+  flex: 0 0 172px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  background: #f4e7ea !important;
+}
+
+.profile-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 22px !important;
+  display: block !important;
+}
