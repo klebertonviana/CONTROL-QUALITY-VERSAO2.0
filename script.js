@@ -4662,7 +4662,7 @@ E-mail: ${email}`;
 
   if (emailTipoSelecionado === "cadastroLogradouro") {
     document.getElementById("emailTo").value =
-      "laura.lima@dinamo.srv.br; vinicius.costa@dinamo.srv.br";
+      "laura.lima@dinamo.srv.br; vinicius.costa@dinamo.srv.br; andreia.barros@equatorialservicos.com.br ; Thayle.b.saraiva@equatorialservicos.com.br;";
 
     document.getElementById("emailCc").value =
       "rosiane.ferreira@equatorialenergia.com.br; tulia.lopes@cgbengenharia.com.br; carlos.almeida@cgbengenharia.com.br; kleberton.cruz@cgbengenharia.com.br;  marliane.santos@cgbengenharia.com.br; adilson.coelho@cgbengenharia.com.br; julyanne.rodrigues@cgbengenharia.com.br; luana.caires@cgbengenharia.com.br; ana.lopes@cgbengenharia.com.br; carolina.silva@cgbengenharia.com.br; marciele.ferreira@cgbengenharia.com.br;  amanda.regina@cgbengenharia.com.br; marlisson.jean@cgbengenharia.com.br; marciele.barbosa@cgbengenharia.com.br;";
